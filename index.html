@@ -5,15 +5,125 @@
 <title>StudyBuddies</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-<script src="js/bootstrap.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="../dist/bootstrap-responsive-tabs.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 <style type="text/css">
     .bs-example{
     	margin: 20px;
     }
 </style>
+</head>
 
-    <body>
-        <h1>STUDY BUDDIES WHOOOOOOO</h1>
-    </body>
-</html>                                
+<body>
+  <div class="container">
+    <br>
+    <!-- logout button -->
+    <div class="row">
+      <div class="col-md-11"></div>
+      <div class="col-md-1">
+        <input class="btn btn-block btn-logout" type="submit" onclick="window.location.href='login.html'" value='Logout'>
+      </div>
+    </div>
+    <!-- logo -->
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="row-fluid user-row">
+            <img src="img/logo.png" class="img-responsive"/>
+        </div>
+      </div>
+    </div>
+    <!-- search bar -->
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-4">
+        <form role="search">
+            <input type="text" class="form-control" placeholder="Search">
+        </form>
+      </div>
+    </div>
+
+    <br>
+    <!-- tabs -->
+    <div class="panel panel-body">
+    <div class="tabbable">
+      <ul class="nav nav-tabs js-tabs-example">
+        <li class="active"><a href="#classes-tab" data-toggle="tab">Classes</a></li>
+        <li><a href="#groups-tab" data-toggle="tab">My Groups</a></li>
+        <li><a href="#create-tab" data-toggle="tab">Create Group</a></li>
+        <li><a href="#manage-tab" data-toggle="tab">Manage Classes</a></li>
+      </ul>
+
+      <div id="my-tab-content" class="tab-content">
+        <!-- classes -->
+        <div class="tab-pane active" id="classes-tab">
+          <center><h4>
+            <font color="#003366">
+            You currently have no classes!
+            </font>
+          </h4></center>
+        </div>
+        <!-- mygroups -->
+        <div class="tab-pane" id="groups-tab">
+          <center><h4>
+            <font color="#003366">
+            You currently have no groups!
+            </font>
+          </h4></center>
+        </div>
+        <!-- create group -->
+        <div class="tab-pane" id="create-tab">
+          <br>
+          <center>
+          <form class="form-inline" id="create-group">
+            <span style="display:inline-block">
+                <label for=class-name style="display:block">Class</label>
+                <input class="form-control" placeholder="ex. COGS 187A" id="class-name" type="text">
+            </span>
+            <span style="display:inline-block">
+                <label for=teacher-name style="display:block">Teacher</label>
+                <input class="form-control" placeholder="ex. Boyle" id="teacher-name" type="text">
+            </span>
+            <span style="display:inline-block">
+                <label for=date style="display:block">Date</label>
+                <input class="form-control" id="date" type="date">
+            </span>
+            <span style="display:inline-block">
+                <label for=time-start style="display:block">Start Time</label>
+                <input class="form-control" id="time-start" type="time">
+            </span>
+            <span style="display:inline-block">
+                <label for=time-end style="display:block">End Time</label>
+                <input class="form-control" id="time-end" type="time">
+            </span>
+            <br><br>
+            <span style="display:inline-block">
+              <label for="desc" style="display:block">Description</label>
+              <textarea class="form-control" placeholder="ex. Studying for final. I have snacks! Wearing blue hat." rows="5" cols="100" id="desc"></textarea>
+            </span>
+            <br><br>
+              <input class="btn btn-create" type="submit" value='Create'>
+          </form>
+          </center>
+        </div>
+        <!-- manage classes -->
+        <div class="tab-pane" id="manage-tab">
+          <center><h4>
+            <font color="#003366">
+            You currently have no classes!
+            </font>
+          </h4></center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </div> <!-- container -->
+</body>
+
+</html>

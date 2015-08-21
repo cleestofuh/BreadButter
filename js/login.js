@@ -1,8 +1,8 @@
 
 $(function() {
- 
+
   Parse.$ = jQuery;
- 
+
   // Replace this line with the one on your Quickstart Guide Page
   Parse.initialize("0s0tCOHzCaM72KQpBBEoCbP0b3f8ft7TzfNF9DzU", "veqqdyOSdNttB7IsKmvMHrpsZSQGnCoNSCJQ45zN");
 
@@ -32,15 +32,17 @@ $(function() {
     var currentUser = Parse.User.current();
     if (currentUser) {
       Parse.User.logOut();
-    } 
+    }
 
     event.preventDefault();
 
+    var first = $("first-name").val();
     var name = $("#signup-name").val();
     var pass = $("#signup-password").val();
 
     // create new parse user and sets the username/password
     var user = new Parse.User();
+    user.set("firstName", first)
     user.set("username", name);
     user.set("password", pass);
 
