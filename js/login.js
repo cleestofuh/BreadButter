@@ -42,7 +42,7 @@ $(function() {
 
     // create new parse user and sets the username/password
     var user = new Parse.User();
-    user.set("firstName", first)
+    user.set("firstName", first);
     user.set("username", name);
     user.set("password", pass);
 
