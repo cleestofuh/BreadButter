@@ -42,7 +42,7 @@
     <!-- tabs -->
     <div class="panel panel-body">
     <div class="tabbable">
-      <ul class="nav nav-tabs js-tabs-example">
+      <ul class="nav nav-tabs nav-justified js-tabs-example">
         <li class="active"><a href="#classes-tab" data-toggle="tab">Classes</a></li>
         <li><a href="#groups-tab" data-toggle="tab">My Groups</a></li>
         <li><a href="#create-tab" data-toggle="tab">Create Group</a></li>
@@ -50,12 +50,18 @@
 
       <div id="my-tab-content" class="tab-content">
         <!-- classes -->
-        <div class="tab-pane active" id="classes-tab">
-          <center><h4>
-            <font color="#003366">
-            You currently have no classes!
-            </font>
-          </h4></center>
+        <div class="tab-pane active" id="classes-tab"> <br/>
+          <center>
+            <form class="form-inline" role="form">
+              <input class="form-control" placeholder="eg. CHEM 6A" id="class-search" type="text" display="inline-block">
+              <input class="btn-md btn-block btn-add" style="width: 34px; height: 34px" type="submit" value='+' display="inline-block">
+            </form>
+
+            <h4><font color="#003366">
+              You currently have no classes added!
+              </font>
+            </h4>
+          </center>
         </div>
         <!-- mygroups -->
         <div class="tab-pane" id="groups-tab">
