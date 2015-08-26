@@ -8,7 +8,6 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script src="../dist/bootstrap-responsive-tabs.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
 <script src="js/create_group.js"></script>
@@ -25,28 +24,18 @@
     <br>
     <!-- logout button -->
     <div class="row">
-      <div class="col-md-11"></div>
+      <div class="col-md-4">
+        <div class="row-fluid user-row">
+            <img src="img/logo.png" class="img-responsive"/>
+        </div>
+      </div>
+      <div class="col-md-7"></div>
       <div class="col-md-1">
         <input class="btn btn-block btn-logout" type="submit" onclick="window.location.href='login.html'" value='Logout'>
       </div>
     </div>
     <!-- logo -->
     <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
-        <div class="row-fluid user-row">
-            <img src="img/logo.png" class="img-responsive"/>
-        </div>
-      </div>
-    </div>
-    <!-- search bar -->
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-4">
-        <form role="search">
-            <input type="text" class="form-control" placeholder="Search">
-        </form>
-      </div>
     </div>
 
     <br>
@@ -57,7 +46,6 @@
         <li class="active"><a href="#classes-tab" data-toggle="tab">Classes</a></li>
         <li><a href="#groups-tab" data-toggle="tab">My Groups</a></li>
         <li><a href="#create-tab" data-toggle="tab">Create Group</a></li>
-        <li><a href="#manage-tab" data-toggle="tab">Manage Classes</a></li>
       </ul>
 
       <div id="my-tab-content" class="tab-content">
@@ -80,8 +68,7 @@
         <!-- create group -->
         <div class="tab-pane" id="create-tab">
           <br>
-          <center>
-          <form class="form-inline" id="create-group">
+          <form class="form-inline" id="createGroup">
             <span style="display:inline-block">
                 <label for=class-name style="display:block">Class</label>
                 <input class="form-control" placeholder="ex. COGS 187A" id="class-name" type="text">
@@ -90,6 +77,11 @@
                 <label for=teacher-name style="display:block">Teacher</label>
                 <input class="form-control" placeholder="ex. Boyle" id="teacher-name" type="text">
             </span>
+            <span style="display:inline-block">
+                <label for=location style="display:block">Location</label>
+                <input class="form-control" placeholder="ex. Geisel 2nd West" id="location" type="text">
+            </span>
+            <br><br>
             <span style="display:inline-block">
                 <label for=date style="display:block">Date</label>
                 <input class="form-control" id="date" type="date">
@@ -102,10 +94,6 @@
                 <label for=time-end style="display:block">End Time</label>
                 <input class="form-control" id="time-end" type="time">
             </span>
-            <span style="display:inline-block">
-                <label for=location style="display:block">Location</label>
-                <input class="form-control" placeholder="ex. Geisel 2nd West" id="location" type="text">
-            </span>
             <br><br>
             <span style="display:inline-block">
               <label for="desc" style="display:block">Description</label>
@@ -114,15 +102,6 @@
             <br><br>
               <input class="btn btn-create" type="submit" value='Create'>
           </form>
-          </center>
-        </div>
-        <!-- manage classes -->
-        <div class="tab-pane" id="manage-tab">
-          <center><h4>
-            <font color="#003366">
-            You currently have no classes!
-            </font>
-          </h4></center>
         </div>
       </div>
     </div>
