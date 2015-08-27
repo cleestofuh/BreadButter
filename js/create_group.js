@@ -8,6 +8,9 @@ $(function() {
   $("#createGroup").submit(function(event) {
     event.preventDefault();
 
+    var currentUser = Parse.User.current();
+
+    var userName = currentUser.get("username");
     var className = $("#class-name").val();
     var teacher = $("#teacher-name").val();
     var location = $("#location").val();
@@ -15,10 +18,12 @@ $(function() {
     var endTime = $("#time-end").val().toString();
     var date = $("#date").val().toString();
     var description = $("#desc").val();
+    var studyBuddy = currentUser.get("firstName");
 
     var Group = Parse.Object.extend("Group");
     var group = new Group();
 
+    group.set("username", userName);
     group.set("class_name", className);
     group.set("teacher", teacher);
     group.set("location", location);
@@ -26,6 +31,7 @@ $(function() {
     group.set("endTime", endTime);
     group.set("date", date);
     group.set("description", description);
+    group.set("studybuddy", studyBuddy);
 
     group.save(null, {
       success: function(group) {
@@ -38,6 +44,31 @@ $(function() {
         alert('Failed to create new object, with error code: ' + error.message);
       }
     });
+
+    currentUser.add("createdGroups", group);
+    currentUser.save(null, {
+      success: function(currentUser) {
+        // Execute any logic that should take place after the object is saved.
+        alert('New group added with group id: ');
+      },
+      error: function(error) {
+        // Execute any logic that should take place if the save fails.
+        // error is a Parse.Error with an error code and message.
+        alert('Failed to create new object, with error code: ' + error.message);
+      }
+    });
+
+/*    var Class = Parse.Object.extend("Class");
+    var clas= new Class();
+
+    var classNames;
+    classNames.push(clas.get("class-name"));
+
+    for(index = 0; index < fruits.length; index++) {
+      if(classNames[index].equals(className)) {
+        clas.addUnique("groupArray", group);
+      }
+    }*/
 
   });
 

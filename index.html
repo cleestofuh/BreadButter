@@ -55,6 +55,7 @@
           <center>
             <form class="form-inline" id="addClass">
               <label for=class-search style="display:block">Add a Class</label>
+            <form class="form-inline" role="form" id="addClass">
               <input class="form-control" placeholder="eg. CHEM 6A" id="class-search" type="text" display="inline-block">
               <input class="btn-md btn-block btn-add" style="width: 34px; height: 34px" type="submit" value='+' display="inline-block">
             </form>
@@ -79,36 +80,36 @@
           <form class="form-inline" id="createGroup">
             <span style="display:inline-block">
                 <label for=class-name style="display:block">Class</label>
-                <input class="form-control" placeholder="ex. COGS 187A" id="class-name" type="text">
+                <input class="form-control input-lg" placeholder="ex. COGS 187A" id="class-name" type="text">
             </span>
             <span style="display:inline-block">
-                <label for=teacher-name style="display:block">Teacher</label>
-                <input class="form-control" placeholder="ex. Boyle" id="teacher-name" type="text">
+                <label for=teacher-name style="display:block">Professor</label>
+                <input class="form-control input-lg" placeholder="ex. Boyle" id="teacher-name" type="text">
             </span>
             <span style="display:inline-block">
                 <label for=location style="display:block">Location</label>
-                <input class="form-control" placeholder="ex. Geisel 2nd West" id="location" type="text">
+                <input class="form-control input-lg" placeholder="ex. Geisel 2nd West" id="location" type="text">
             </span>
             <br><br>
             <span style="display:inline-block">
                 <label for=date style="display:block">Date</label>
-                <input class="form-control" id="date" type="date">
+                <input class="form-control input-lg" id="date" type="date">
             </span>
             <span style="display:inline-block">
                 <label for=time-start style="display:block">Start Time</label>
-                <input class="form-control" id="time-start" type="time">
+                <input class="form-control input-lg" id="time-start" type="time">
             </span>
             <span style="display:inline-block">
                 <label for=time-end style="display:block">End Time</label>
-                <input class="form-control" id="time-end" type="time">
+                <input class="form-control input-lg" id="time-end" type="time">
             </span>
             <br><br>
             <span style="display:inline-block">
               <label for="desc" style="display:block">Description</label>
-              <textarea class="form-control" placeholder="ex. Studying for final. I have snacks! Wearing blue hat." rows="5" cols="100" type="text" id="desc"></textarea>
+              <textarea class="form-control input-lg" placeholder="ex. Studying for final. I have snacks! Wearing blue hat." rows="5" cols="70" type="text" id="desc"></textarea>
             </span>
             <br><br>
-              <input class="btn btn-create" type="submit" value="Create">
+              <input class="btn btn-create btn-lg" type="submit" value="Create">
           </form>
         </div>
       </div>

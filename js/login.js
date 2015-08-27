@@ -7,6 +7,12 @@ $(function() {
 
   // login function
   $("#login").submit(function(event) {
+
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+      Parse.User.logOut();
+    }
+
     event.preventDefault();
 
     var name = $("#login-name").val();
@@ -35,7 +41,7 @@ $(function() {
 
     event.preventDefault();
 
-    var first = $("first-name").val();
+    var first = $("#first-name").val();
     var name = $("#signup-name").val();
     var pass = $("#signup-password").val();
 
