@@ -16,7 +16,15 @@ body {
   color: #FFF;
   background-color: #003366;
   border: 0px;
+  margin-left: 35%;
 }
+
+.btn-create:hover {
+    color:#003366;
+    border: 1px solid #003366;
+    background-color:#FFF;
+}
+
 .btn-block {
     box-shadow: none;
 }
@@ -27,8 +35,16 @@ body {
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    font-size: 20px;
 }
 
 .btn-add {
       display: inline;
 }
+
+#createGroup {
+    margin-left: 20%;
+    font-size: 16px;
+}
+
+
