@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>StudyBuddies: Study Resources</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+	<script src="js/create_group.js"></script>
+
+	<style type="text/css">
+		.bs-example{
+			margin: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+	<br>
+		<!-- LOGO // header -->
+	<div class="row">
+		<div class="col-md-4">
+			<div class="row-fluid user-row">
+				<img src="img/logo.png" class="img-responsive">
+			</div>
+		</div>
+		<div class="col-md-7"></div>
+		<!-- Logout button -->
+		<div class="col-md-1">
+			<input class="btn btn-block btn-logout" type="submit" onclick="window.location.href='login.html'" value='Logout'>
+		</div>
+	</div>
+
+	<!-- Title -->
+	<div class="container">
+		<h2 style="text-align: center"> COGS 187A Study Resources </h2>
+	</div>
+
+	<!-- Study Resources -->
+	<div class="study-res" style="display: inline">
+		<center>
+			<!-- Rectangular box + link for resource -->
+			<a href="#">
+			<div class="res" style="border: 1px solid black; display: inline-block; background-color: #FFF">
+				<h3> Resources for prototyping </h3>
+				<h5> https://justinmind.com </h5>
+		    </div>
+		    </a>
+		    <!-- Thumbs up/down -->
+		    <div class="rate">
+		    	<input type="image" style="width: 50px; height: 50px" src="img/up.png" style= type="button">
+		    	<br></br>
+		    	<input type="image" style="width: 50px; height: 50px" src="img/down.png" type="button">
+		    	<!-- <div class="up" style="width: 50px; height: 50px">
+		    		<img src="img/up.png" class="img-responsive">
+		    	</div>
+		    	<br></br>
+		    	<div class="down" style="width: 50px; height: 50px">
+		    		<img src="img/down.png" class="img-responsive">
+		    	</div> -->
+		    </div>
+		<center>
+	</div>
+
+	<!-- Submit resources -->
+	<div class="submit-own">
+		<center>
+		<form class="form-inline" role="form" id="submitOwn">
+			<label for=submit-url style="display:block; font-size: 16px">Submit your own study resources!</label>
+			<textarea class="form-control" placeholder="url" id="submit-url" type="text" style="align:center" rows="1" cols="70"></textarea>
+			<br></br>
+			<textarea class="form-control input-lg" placeholder="Description" rows="4" cols="54" id="submit-desc" type="text"></textarea>
+			<br></br>
+			<input class="btn btn-submit btn-md" type="submit" value="Post">
+		</form>
+	    </center>
+	</div>
+</body>
+
+</html>
+
+

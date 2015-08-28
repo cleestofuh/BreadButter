@@ -12,19 +12,18 @@ body {
     background-color: #CCC;
     border: 0px;
 }
+
 .btn-create {
   color: #FFF;
   background-color: #003366;
   border: 0px;
   margin-left: 35%;
 }
-
 .btn-create:hover {
     color:#003366;
     border: 1px solid #003366;
-    background-color:#FFF;
+    background-color: #FFF;
 }
-
 .btn-block {
     box-shadow: none;
 }
@@ -37,14 +36,44 @@ body {
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     font-size: 20px;
 }
-
 .btn-add {
       display: inline;
 }
-
 #createGroup {
     margin-left: 20%;
     font-size: 16px;
+}
+
+
+
+/* CSS for resources.html */
+.btn-submit {
+    color: #FFF;
+    background-color: #003366;
+    border: 0px;
+}
+.btn-submit:hover {
+    color: #003366;
+    border: 1px solid #003366;
+    background-color: #FFF;
+}
+.res {
+    float: left;
+    margin-top: 30px;
+    margin-left: 25%;
+    margin-bottom: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+.rate {
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.submit-own {
+    clear:both;
 }
 
 
