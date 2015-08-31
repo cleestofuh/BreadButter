@@ -2,15 +2,14 @@ $(function() {
 
   Parse.$ = jQuery;
 
+  // Replace this line with the one on your Quickstart Guide Page
   Parse.initialize("0s0tCOHzCaM72KQpBBEoCbP0b3f8ft7TzfNF9DzU", "veqqdyOSdNttB7IsKmvMHrpsZSQGnCoNSCJQ45zN");
 
-  // function ot create group. adds the data form the form into Parse db
   $("#createGroup").submit(function(event) {
     event.preventDefault();
 
     var currentUser = Parse.User.current();
 
-    // gets all the variables from the form
     var userName = currentUser.get("username");
     var className = $("#class-name").val();
     var teacher = $("#teacher-name").val();
@@ -21,58 +20,55 @@ $(function() {
     var description = $("#desc").val();
     var studyBuddy = currentUser.get("firstName");
 
-// only able to create group if you are in the class
-    var Class = Parse.Object.extend("Class");
-    var createQuery = new Parse.Query(Class);
-    createQuery.equalTo("class_name", className);
-    createQuery.find({
-      success: function(classes) {
-        // save
-        // create a new group object
-        var Group = Parse.Object.extend("Group");
-        var group = new Group();
+    var Group = Parse.Object.extend("Group");
+    var group = new Group();
 
+    group.set("username", userName);
+    group.set("classNames", className);
+    group.set("teacher", teacher);
+    group.set("location", location);
+    group.set("startTime", startTime);
+    group.set("endTime", endTime);
+    group.set("date", date);
+    group.set("description", description);
+    group.set("studybuddy", studyBuddy);
 
-        // set fields in group object
-        group.set("username", userName);
-        group.set("classNames", className);
-        group.set("teacher", teacher);
-        group.set("location", location);
-        group.set("startTime", startTime);
-        group.set("endTime", endTime);
-        group.set("date", date);
-        group.set("description", description);
-        group.set("studybuddy", studyBuddy);
-
-        // save the group
-        group.save(null, {
-          success: function(group) {
-            // Execute any logic that should take place after the object is saved.
-            alert('New object created with objectId: ' + group.id);
-          },
-          error: function(error) {
-            // Execute any logic that should take place if the save fails.
-            // error is a Parse.Error with an error code and message.
-            alert('Failed to create new object, with error code: ' + error.message);
-          }
-        });
-
-        // add the group to the groupArray in the user who created it
-        currentUser.add("createdGroups", group);
-        currentUser.save(null, {
-          success: function(currentUser) {
-            // Execute any logic that should take place after the object is saved.
-            alert('SUCCESS');
-          },
-          error: function(error) {
-            // Execute any logic that should take place if the save fails.
-            // error is a Parse.Error with an error code and message.
-            alert('FAILURE');
-          }
-        });
-
+    group.save(null, {
+      success: function(group) {
+        // Execute any logic that should take place after the object is saved.
+        alert('New object created with objectId: ' + group.id);
+      },
+      error: function(error) {
+        // Execute any logic that should take place if the save fails.
+        // error is a Parse.Error with an error code and message.
+        alert('Failed to create new object, with error code: ' + error.message);
       }
     });
+
+    currentUser.add("createdGroups", group);
+    currentUser.save(null, {
+      success: function(currentUser) {
+        // Execute any logic that should take place after the object is saved.
+        alert('New group added with group id: ');
+      },
+      error: function(error) {
+        // Execute any logic that should take place if the save fails.
+        // error is a Parse.Error with an error code and message.
+        alert('Failed to create new object, with error code: ' + error.message);
+      }
+    });
+
+/*    var Class = Parse.Object.extend("Class");
+    var clas= new Class();
+
+    var classNames;
+    classNames.push(clas.get("class-name"));
+
+    for(index = 0; index < fruits.length; index++) {
+      if(classNames[index].equals(className)) {
+        clas.addUnique("groupArray", group);
+      }
+    }*/
 
   });
 
