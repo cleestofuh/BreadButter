@@ -24,7 +24,7 @@ $(function() {
     var group = new Group();
 
     group.set("username", userName);
-    group.set("class_name", className);
+    group.set("classNames", className);
     group.set("teacher", teacher);
     group.set("location", location);
     group.set("startTime", startTime);

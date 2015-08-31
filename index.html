@@ -12,6 +12,7 @@
 <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
 <script src="js/create_group.js"></script>
 <script src="js/addClass.js"></script>
+<script src="js/updateTables.js"></script>
 
 <style type="text/css">
     .bs-example{
@@ -55,15 +56,64 @@
           <center>
             <form class="form-inline" id="addClass">
               <label for=class-search style="display:block"><h4>Add a Class</h4></label>
-            <form class="form-inline" id="addClass">
-              <input class="form-control" placeholder="eg. CHEM 6A" id="class-search" type="text" display="inline-block">
-              <input class="btn-md btn-block btn-add" style="width: 34px; height: 34px;" type="submit" value='+' display="inline-block">
-            </form>
 
-            <h4><font color="#003366">
-              You currently have no classes added!
-              </font>
-            </h4>
+              <input class="form-control" placeholder="eg. CHEM 6A" id="class-search" type="text" display="inline-block">
+              <!--<input class="btn-md btn-block btn-add" style="width: 34px; height: 34px;" type="submit" value='+' display="inline-block">-->
+              <button type="submit" class="btn btn-info" display="inline-block"><b>+</b></button>
+            </form>
+            <br>
+            <div id="classList">
+              <div class="alert alert-info">
+                <strong>COGS 187A</strong>
+                <button type='button' class='close' data-dismiss='alert'>X</button>
+              </div>
+              <div id="table-one">
+                <table class="table table-striped" id="table-info">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Time</th>
+                      <th>Professor</th>
+                      <th>Location</th>
+                      <th>Description</th>
+                      <th># of People</th>
+                      <th>Study Buddy</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>8/31/2015</td>
+                      <td>4:00 PM - 6:00 PM</td>
+                      <td>Boyle</td>
+                      <td>CSB 115</td>
+                      <td>Working on the website</td>
+                      <td>4</td>
+                      <td>Kirk</td>
+                      <td><button type="button" class="btn btn-info"><b>+</b></button></td>
+                    </tr>
+                    <tr>
+                      <td>Test</td>
+                      <td>Test</td>
+                      <td>Test</td>
+                      <td>Test</td>
+                      <td>Test</td>
+                      <td>Test</td>
+                      <td>Test</td>
+                      <td><button type="button" class="btn btn-info"><b>+</b></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <button type="button" class="btn btn-info"><b>Resources</b></button>
+            <div id="noClassText">
+              <h4><font color="#003366">
+                You currently have no classes added!
+                </font>
+              </h4>
+            </div>
+            </form>
           </center>
         </div>
         <!-- mygroups -->
