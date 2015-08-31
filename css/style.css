@@ -9,7 +9,7 @@ body {
 }
 .btn-logout {
     color: #FFF;
-    background-color: #CCC;
+    background-color: #003366;
     border: 0px;
 }
 
@@ -37,7 +37,10 @@ body {
     font-size: 20px;
 }
 .btn-add {
+      color: #FFF;
+      background-color: #003366;
       display: inline;
+      border: 0px;
 }
 #createGroup {
     margin-left: 20%;
@@ -75,5 +78,7 @@ body {
 .submit-own {
     clear:both;
 }
-
-
+.back-arrow {
+    margin-left: 25%;
+    margin-bottom: -25px;
+}

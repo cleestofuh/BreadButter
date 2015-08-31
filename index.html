@@ -14,6 +14,7 @@
 <script src="js/addClass.js"></script>
 <script src="js/updateTables.js"></script>
 
+
 <style type="text/css">
     .bs-example{
     	margin: 20px;
@@ -118,11 +119,106 @@
         </div>
         <!-- mygroups -->
         <div class="tab-pane" id="groups-tab">
-          <center><h4>
+          <center><!--<h4>
             <font color="#003366">
             You currently have no groups!
             </font>
-          </h4></center>
+          </h4>-->
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Edit Group</h4>
+                </div>
+                <div class="modal-body">
+                  <center>
+                  <form>
+                    <span style="display:inline-block">
+                        <label for=class-name style="display:block">Class</label>
+                        <input class="form-control input-lg" id="class-name" type="text">
+                    </span>
+                    <br>
+                    <span style="display:inline-block">
+                        <label for=teacher-name style="display:block">Professor</label>
+                        <input class="form-control input-lg" id="teacher-name" type="text">
+                    </span>
+                    <br>
+                    <span style="display:inline-block">
+                        <label for=location style="display:block">Location</label>
+                        <input class="form-control input-lg" id="location" type="text">
+                    </span>
+                    <br>
+                    <span style="display:inline-block">
+                        <label for=date style="display:block">Date</label>
+                        <input class="form-control input-lg" id="date" type="date">
+                    </span>
+                    <br>
+                    <span style="display:inline-block">
+                        <label for=time-start style="display:block">Start Time</label>
+                        <input class="form-control input-lg" id="time-start" type="time">
+                    </span>
+                    <br>
+                    <span style="display:inline-block">
+                        <label for=time-end style="display:block">End Time</label>
+                        <input class="form-control input-lg" id="time-end" type="time">
+                    </span>
+                    <br>
+                    <span style="display:inline-block">
+                      <label for="desc" style="display:block">Description</label>
+                      <input class="form-control input-lg" type="text" id="desc"></input>
+                    </span>
+                  </form>
+                </center>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-block btn-logout" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-block btn-logout">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <table class="table table-hover" id="myGroups-table">
+            <tr>
+              <th>Class</th>
+              <th>Teacher</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Location</th>
+              <th>Study Buddy</th>
+              <th>Description</th>
+              <th></th>
+            </tr>
+            <tr>
+                <td>COGS 187A</td>
+                <td>Boyle</td>
+                <td>8/31/15</td>
+                <td>11:00AM - 2:00PM</td>
+                <td>Geisel 2nd Floor East</td>
+                <td>Chris</td>
+                <td>Working on this website. Next to bathrooms</td>
+                <td>
+                  <button type="button" class="btn btn-block btn-logout" data-toggle="modal" data-target="#myModal">
+                    Edit
+                  </button>
+                  <input class="btn btn-block btn-logout" type="button" value='Cancel'>
+                </td>
+            </tr>
+            <tr>
+                <td>CSE 11</td>
+                <td>Ord</td>
+                <td>8/31/15</td>
+                <td>4:00PM - 6:30PM</td>
+                <td>CSE B260</td>
+                <td>Kirk</td>
+                <td>Working on PA3. Lets try to figure this out! I have snacks!</td>
+                <td><input class="btn btn-block btn-logout" type="submit" value='Leave'></td>
+            </tr>
+          </table>
+        </center>
         </div>
         <!-- create group -->
         <div class="tab-pane" id="create-tab">
@@ -170,4 +266,11 @@
   </div> <!-- container -->
 </body>
 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+<script src="js/create_group.js"></script>
+<script src="js/addClass.js"></script>
+<script src="js/my_groups.js"></script>
 </html>
