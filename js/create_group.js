@@ -20,9 +20,17 @@ $(function() {
     var description = $("#desc").val();
     var studyBuddy = currentUser.get("firstName");
 
+<<<<<<< HEAD
     var Group = Parse.Object.extend("Group");
     var group = new Group();
 
+=======
+    // create a new group object
+    var Group = Parse.Object.extend("Group");
+    var group = new Group();
+
+    // set fields in group object
+>>>>>>> 4d3598db2eba3166f40c586b425724c2b8efceea
     group.set("username", userName);
     group.set("classNames", className);
     group.set("teacher", teacher);
@@ -33,6 +41,10 @@ $(function() {
     group.set("description", description);
     group.set("studybuddy", studyBuddy);
 
+<<<<<<< HEAD
+=======
+    // save the group
+>>>>>>> 4d3598db2eba3166f40c586b425724c2b8efceea
     group.save(null, {
       success: function(group) {
         // Execute any logic that should take place after the object is saved.
@@ -44,6 +56,7 @@ $(function() {
         alert('Failed to create new object, with error code: ' + error.message);
       }
     });
+<<<<<<< HEAD
 
     currentUser.add("createdGroups", group);
     currentUser.save(null, {
@@ -67,8 +80,23 @@ $(function() {
     for(index = 0; index < fruits.length; index++) {
       if(classNames[index].equals(className)) {
         clas.addUnique("groupArray", group);
+=======
+
+    // add the group to the groupArray in the user who created it
+    currentUser.add("createdGroups", group);
+    currentUser.save(null, {
+      success: function(currentUser) {
+        // Execute any logic that should take place after the object is saved.
+        alert('SUCCESS');
+      },
+      error: function(error) {
+        // Execute any logic that should take place if the save fails.
+        // error is a Parse.Error with an error code and message.
+        alert('FAILURE');
+>>>>>>> 4d3598db2eba3166f40c586b425724c2b8efceea
       }
     }*/
+
 
   });
 
