@@ -29,7 +29,7 @@ $(function() {
         for(var i = 0; i < results.length; i++) {
           var object = results[i];
           alert(object.id + ' - ' + object.get('class_name'));
-        }//*/
+        }
 
         if(currentCount == 0){
           var Class = Parse.Object.extend("Class");
@@ -102,67 +102,32 @@ $(function() {
         alert("Error: " + error.code + " " + error.message);
       }
 
-
-    });//*/
+    });
     $("#noClassText").hide();
-
-    /*
-    var classText = $("#noClassText");
-    //alert("Class text: " + classText);
-    classText.style.display = 'none';
-    */
-
-    // else, add the class to the database of classes
-    /*var Class = Parse.Object.extend("Class");
-    var classObj = new Class();
-
-    classObj.set("class_name", classSearchName);*/
-
-    //alert("currentCount: " + currentCount);
-    // add class to database and to user
-    /*if(currentCount == 0){
-      alert("TEST");
-      var Class = Parse.Object.extend("Class");
-      var classObj = new Class();
-
-      classObj.set("class_name", classSearchName);
-
-      classObj.save(null, {
-        success: function(classObj) {
-          // Execute any logic that should take place after the object is saved.
-          alert('New object created with objectId: ' + classObj.id);
-        },
-        error: function(error) {
-          // Execute any logic that should take place if the save fails.
-          // error is a Parse.Error with an error code and message.
-          alert('Failed to create new object, with error code ' + error.message);
-        }
-      });
-
-      currentUser.add("classArray", classObj);
-      currentUser.save(null, {
-        success: function(currentUser) {
-          alert('New class added with classObj id: ' + classObj.id);
-        },
-        error: function(error) {
-          alert('Failed to create new object, with error code: ' + error.message);
-        }
-      });
-    }
-    else { // add class to user only
-
-      currentUser.add("classArray", objId);
-      currentUser.save(null, {
-        success: function(currentUser) {
-          alert('New class added with classObj id: ' + objId);
-        },
-        error: function(error){
-          alert('Failed to create new object, with error code: ' + error.message);
-        }
-      });
-    }//*/
-
 
   });
 
+/* ADD NEW CLASS
+  $("#addClass").submit(function(event) {
+    event.preventDefault();
+
+    var classSearchName = $("#class-search").val();
+    //var classSearchName = document.getElementById("#class-search").value;
+
+    var newClass = document.createElement("div");
+    var className = document.createTextNode(classSearchName);
+
+    newClass.style.border = "1px solid black";
+		newClass.style.display = "inline";
+		newClass.style.background = "#FFF";
+		newClass.style.float = "left";
+		newClass.style.padding = "25px 150px 25px 150px";
+		newClass.style.align = "center";
+		newClass.style.fontSize = "21px";
+		newClass.style.color = "#4f75ca";
+
+		newClass.appendChild(className);
+    document.body.appendChild(newClass);
+  });
+*/
 });
