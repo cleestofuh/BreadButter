@@ -18,9 +18,9 @@ Parse.initialize("0s0tCOHzCaM72KQpBBEoCbP0b3f8ft7TzfNF9DzU", "veqqdyOSdNttB7IsKm
                                   '</td><td>' + object.get('teacher') +
                                   '</td><td>' + object.get('location') +
                                   '</td><td>' + object.get('description') +
-                                  '</td><td> #' +
+                                  '</td><td> 3' +
                                   '</td><td>' + object.get('studybuddy') + '</td><td>' +
-                                  '<button type="button" class="btn btn-info"><b>+</b></button>' + '</td></tr>');
+                                  '<button type="button" class="btn btn-logout btn-block">Join</button>' + '</td></tr>');
           })(jQuery);
       }
       //$('#table-info').append('<tr><td>' + object.get('studybuddy') + '</td></tr>');
