@@ -48,7 +48,6 @@ $(function() {
               alert('Failed to create new object, with error code ' + error.message);
             }
           });
-
           currentUser.add("classArray", classObj);
           currentUser.save(null, {
             success: function(currentUser) {
@@ -61,6 +60,32 @@ $(function() {
         }
         else { // add class to user only
 
+          // TODO: if the user already has the class added, do not add
+          //alert("ZERO");
+          //var classQuery = new Parse.Query(currentUser);
+
+          /*var fetchArray = currentUser.fetch("classArray");
+          alert("fetch: " + fetchArray);
+          for(var i = 0; i < fetchArray.length; i++) {
+            alert("INSIDE");
+            var object = fetchedArray[i];
+            alert("STEP");
+            alert(object.id + ' - ' + object.get("class_name"));
+          }
+
+          currentUser.fetch("classArray").then(function(fetchedClassArray) {
+            alert("ONE");
+
+            alert("size: " + fetchedClassArray.length);
+            for(var i = 0; i < fetchedClassArray.length; i++) {
+              alert("INSIDE");
+              var object = fetchedClassArray[i];
+              alert("Curr Class obj id: " + object.id);
+            }
+          });//*/
+
+          // WORKING------------------------------------------------------
+          // user did not add the class yet
           currentUser.add("classArray", objId);
           currentUser.save(null, {
             success: function(currentUser) {
@@ -70,12 +95,22 @@ $(function() {
               alert('Failed to create new object, with error code: ' + error.message);
             }
           });
+          // END WORKING-------------------------------------------------
         }
       },
       error: function(error) {
         alert("Error: " + error.code + " " + error.message);
       }
+
+
     });//*/
+    $("#noClassText").hide();
+
+    /*
+    var classText = $("#noClassText");
+    //alert("Class text: " + classText);
+    classText.style.display = 'none';
+    */
 
     // else, add the class to the database of classes
     /*var Class = Parse.Object.extend("Class");
@@ -126,6 +161,8 @@ $(function() {
         }
       });
     }//*/
+
+
   });
 
 });

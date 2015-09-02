@@ -46,12 +46,32 @@ obody {
       display: inline;
       border: 0px;
 }
+
 #createGroup {
     margin-left: 20%;
     font-size: 16px;
 }
 
+#className {
+    width: 100%;
+}
 
+#className:hover {
+    color: #fff;
+}
+
+#close {
+    color: #fff;
+}
+
+#table-info, #myGroups-table {
+    font-size: 16px;
+}
+
+#resources {
+    float: right;
+    font-size: 16px;
+}
 
 /* CSS for resources.html */
 .btn-submit {

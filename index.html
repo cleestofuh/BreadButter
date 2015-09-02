@@ -21,7 +21,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="row-fluid user-row">
-            <img src="img/logo.png" class="img-responsive"/>
+            <img src="img/logo.png" class="img-responsive" onclick="window.location.href='index.html'"/>
         </div>
       </div>
       <div class="col-md-7"></div>
@@ -49,15 +49,61 @@
           <center>
             <form class="form-inline" id="addClass">
               <label for=class-search style="display:block"><h4>Add a Class</h4></label>
-            <form class="form-inline" id="addClass">
-              <input class="form-control" placeholder="eg. CHEM 6A" id="class-search" type="text" display="inline-block">
-              <input class="btn-md btn-block btn-add" style="width: 34px; height: 34px;" type="submit" value='+' display="inline-block">
-            </form>
 
-            <h4><font color="#003366">
-              You currently have no classes added!
-              </font>
-            </h4>
+              <input class="form-control" placeholder="eg. CHEM 6A" id="class-search" type="text" display="inline-block">
+              <!--<input class="btn-md btn-block btn-add" style="width: 34px; height: 34px;" type="submit" value='+' display="inline-block">-->
+              <button type="submit" class="btn btn-logout" display="inline-block"><b>+</b></button>
+            </form>
+            <br>
+            <div id="classList">
+              <div id="className" class="btn btn-logout">
+                <strong>COGS 187A</strong>
+                <button id="close" type='button' class='close' data-dismiss='alert'>X</button>
+              </div>
+              <div id="table-one">
+                <table class="table table-striped" id="table-info">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Time</th>
+                      <th>Professor</th>
+                      <th>Location</th>
+                      <th>Description</th>
+                      <th># of People</th>
+                      <th>Study Buddy</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- SAMPLE FORMAT -->
+                    <tr>
+                      <td>8/31/2015</td>
+                      <td>4:00 PM - 6:00 PM</td>
+                      <td>Boyle</td>
+                      <td>CSB 115</td>
+                      <td>Coding for the portfolio + web app</td>
+                      <td>4</td>
+                      <td>me</td>
+
+                      <td><!--<button type="button" class="btn btn-logout">Join</button>--></td>
+
+                    </tr>
+                    <!-- END SAMPLE -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="resources">
+              Need additional study resources or have resources you want to recommend? &nbsp;
+              <button type="button" class="btn btn-logout" onclick="window.location.href='resources.html'"><b>Class Resources</b></button>
+            </div>
+          <!--  <div id="noClassText">
+              <h4><font color="#003366">
+                You currently have no classes added!
+                </font>
+              </h4>
+            </div>-->
+            </form>
           </center>
         </div>
         <!-- mygroups -->
@@ -81,37 +127,37 @@
                   <form>
                     <span style="display:inline-block">
                         <label for=class-name style="display:block">Class</label>
-                        <input class="form-control input-lg" id="class-name" type="text">
+                        <input class="form-control input-lg" type="text">
                     </span>
                     <br>
                     <span style="display:inline-block">
                         <label for=teacher-name style="display:block">Professor</label>
-                        <input class="form-control input-lg" id="teacher-name" type="text">
+                        <input class="form-control input-lg" type="text">
                     </span>
                     <br>
                     <span style="display:inline-block">
                         <label for=location style="display:block">Location</label>
-                        <input class="form-control input-lg" id="location" type="text">
+                        <input class="form-control input-lg" type="text">
                     </span>
                     <br>
                     <span style="display:inline-block">
                         <label for=date style="display:block">Date</label>
-                        <input class="form-control input-lg" id="date" type="date">
+                        <input class="form-control input-lg" type="date">
                     </span>
                     <br>
                     <span style="display:inline-block">
                         <label for=time-start style="display:block">Start Time</label>
-                        <input class="form-control input-lg" id="time-start" type="time">
+                        <input class="form-control input-lg" type="time">
                     </span>
                     <br>
                     <span style="display:inline-block">
                         <label for=time-end style="display:block">End Time</label>
-                        <input class="form-control input-lg" id="time-end" type="time">
+                        <input class="form-control input-lg" type="time">
                     </span>
                     <br>
                     <span style="display:inline-block">
                       <label for="desc" style="display:block">Description</label>
-                      <input class="form-control input-lg" type="text" id="desc"></input>
+                      <input class="form-control input-lg" type="text"></input>
                     </span>
                   </form>
                 </center>
@@ -123,7 +169,7 @@
               </div>
             </div>
           </div>
-
+          <br>
           <table class="table table-hover" id="myGroups-table">
             <tr>
               <th>Class</th>
@@ -142,7 +188,7 @@
                 <td>11:00AM - 2:00PM</td>
                 <td>Geisel 2nd Floor East</td>
                 <td>Chris</td>
-                <td>Working on this website. Next to bathrooms</td>
+                <td>Studying for final. I have snacks! Wearing blue hat.</td>
                 <td>
                   <button type="button" class="btn btn-block btn-logout" data-toggle="modal" data-target="#myModal">
                     Edit
@@ -198,7 +244,7 @@
               <textarea class="form-control input-lg" placeholder="ex. Studying for final. I have snacks! Wearing blue hat." rows="5" cols="70" type="text" id="desc"></textarea>
             </span>
             <br><br>
-              <input class="btn btn-create btn-lg" type="submit" value="Create">
+              <input class="btn btn-create btn-lg" type="submit" value="Create"><!-- onclick="window.location.reload()">-->
           </form>
         </div>
       </div>
@@ -215,5 +261,6 @@
 <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
 <script src="js/create_group.js"></script>
 <script src="js/addClass.js"></script>
+<script src="js/updateTables.js"></script>
 <script src="js/my_groups.js"></script>
 </html>

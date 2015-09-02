@@ -4,7 +4,7 @@ $(function() {
 
   Parse.initialize("0s0tCOHzCaM72KQpBBEoCbP0b3f8ft7TzfNF9DzU", "veqqdyOSdNttB7IsKmvMHrpsZSQGnCoNSCJQ45zN");
 
-  var myGroups = Parse.Object.extend("Groups");
+/*  var myGroups = Parse.Object.extend("Groups");
   var query = new Parse.Query(myGroups);
   var currentUser = Parse.User.current();
   var curUsername = currentUser.get("username");
