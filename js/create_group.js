@@ -41,7 +41,7 @@ $(function() {
     group.save(null, {
       success: function(group) {
         // Execute any logic that should take place after the object is saved.
-        alert('New object created with objectId: ' + group.id);
+        alert('Class added!');
       },
       error: function(error) {
         // Execute any logic that should take place if the save fails.
@@ -54,7 +54,7 @@ $(function() {
     currentUser.save(null, {
       success: function(currentUser) {
         // Execute any logic that should take place after the object is saved.
-        alert('New group added with group id: ');
+        
       },
       error: function(error) {
         // Execute any logic that should take place if the save fails.
