@@ -1,4 +1,4 @@
-body {
+obody {
     background-color: #FFF;
     background: url(../img/notebook.png) no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -20,10 +20,10 @@ body {
 }
 
 .btn-create {
-  color: #FFF;
-  background-color: #003366;
-  border: 0px;
-  margin-left: 35%;
+    color: #FFF;
+    background-color: #003366;
+    border: 0px;
+    margin-left: 35%;
 }
 .btn-create:hover {
     color:#003366;
@@ -48,12 +48,32 @@ body {
       display: inline;
       border: 0px;
 }
+
 #createGroup {
     margin-left: 20%;
     font-size: 16px;
 }
 
+#className {
+    width: 100%;
+}
 
+#className:hover {
+    color: #fff;
+}
+
+#close {
+    color: #fff;
+}
+
+#table-info, #myGroups-table {
+    font-size: 16px;
+}
+
+#resources {
+    float: right;
+    font-size: 16px;
+}
 
 /* CSS for resources.html */
 .btn-submit {
@@ -78,11 +98,17 @@ body {
 }
 .rate {
     float: left;
+}
+#up {
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: -15px;
+}
+#down {
+    margin-top: -15px;
+    margin-bottom: 10px;
 }
 .submit-own {
-    clear:both;
+    clear: both;
 }
 .back-arrow {
     margin-left: 25%;
