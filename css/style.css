@@ -15,8 +15,7 @@ body {
 
 .btn-logout:hover {
     color: #FFF;
-    background-color: #003366;
-    border: 1px solid #003366;
+    background-color: #CCC;
 }
 
 .btn-create {
