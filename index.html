@@ -26,7 +26,7 @@
       </div>
       <div class="col-md-7"></div>
       <div class="col-md-1">
-        <input class="btn btn-block btn-logout" type="submit" onclick="window.location.href='login.html'" value='Logout'>
+        <input class="btn btn-block btn-logout" type="submit" onclick="window.location.href='index.html'" value='Logout'>
       </div>
     </div>
     <!-- logo -->
@@ -56,9 +56,9 @@
             </form>
             <br>
             <div id="classList">
-              <div class="alert alert-info">
+              <div id="className" class="btn btn-logout">
                 <strong>COGS 187A</strong>
-                <button type='button' class='close' data-dismiss='alert'>X</button>
+                <button id="close" type='button' class='close' data-dismiss='alert'>X</button>
               </div>
               <div id="table-one">
                 <table class="table table-striped" id="table-info">
@@ -75,6 +75,7 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <!-- SAMPLE FORMAT
                     <tr>
                       <td>8/31/2015</td>
                       <td>4:00 PM - 6:00 PM</td>
@@ -87,11 +88,15 @@
                       <td><button type="button" class="btn btn-logout">Join</button></td>
 
                     </tr>
+                    -->
                   </tbody>
                 </table>
               </div>
             </div>
-            <button type="button" class="btn btn-logout" onclick="window.location.href='resources.html'"><b>Resources</b></button>
+            <div id="resources">
+              Need additional study resources or have resources you want to recommend? &nbsp;
+              <button type="button" class="btn btn-logout" onclick="window.location.href='resources.html'"><b>Class Resources</b></button>
+            </div>
           <!--  <div id="noClassText">
               <h4><font color="#003366">
                 You currently have no classes added!
@@ -239,7 +244,7 @@
               <textarea class="form-control input-lg" placeholder="ex. Studying for final. I have snacks! Wearing blue hat." rows="5" cols="70" type="text" id="desc"></textarea>
             </span>
             <br><br>
-              <input class="btn btn-create btn-lg" type="submit" value="Create">
+              <input class="btn btn-create btn-lg" type="submit" value="Create" onClick="window.location.reload()">
           </form>
         </div>
       </div>

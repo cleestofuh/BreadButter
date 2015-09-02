@@ -11,10 +11,33 @@ Parse.initialize("0s0tCOHzCaM72KQpBBEoCbP0b3f8ft7TzfNF9DzU", "veqqdyOSdNttB7IsKm
       for(var i = 0; i < results.length; i++) {
         //alert("loop");
         var object = results[i];
-        //alert("object date: " + object.get('date'));
+        var date = new Date(object.get('date'));
+        /* Doesn't work for a date like Jan 1, 2015. Basically the format decreasing the month/day by 1 */
+        var formattedDate = ((date.getMonth() + 1) + '/' + (date.getDate() + 1) + '/' +  date.getFullYear() );
+
+        //var startTime = new Date(object.get('startTime'));
+        //var endTime = new Date(object.get('endTime'));
+
+        var startTime = object.get('startTime').split(':');
+        var startHours = Number(startTime[0]);
+        var startMinutes = Number(startTime[1]);
+
+        var formatStartTime = "" + ((startHours > 12) ? startHours - 12 : startHours);
+            formatStartTime += (startMinutes < 10) ? ":0" + startMinutes : ":" + startMinutes;
+            formatStartTime += (startHours >= 12) ? " PM" : " AM";
+
+        var endTime = object.get('endTime').split(':');
+        var endHours = Number(endTime[0]);
+        var endMinutes = Number(endTime[1]);
+
+        var formatEndTime = "" + ((endHours > 12) ? endHours - 12 : endHours);
+            formatEndTime += (endMinutes < 10) ? ":0" + endMinutes : ":" + endMinutes;
+            formatEndTime += (endHours >= 12) ? " PM" : " AM";
+
+
         (function($) {
-          $('#table-info').append('<tr><td>' + object.get('date') +
-                                  '</td><td>' + object.get('startTime') + ' - ' + object.get('endTime') +
+          $('#table-info').append('<tr><td>' + formattedDate +
+                                  '</td><td>' + formatStartTime + ' - ' + formatEndTime +
                                   '</td><td>' + object.get('teacher') +
                                   '</td><td>' + object.get('location') +
                                   '</td><td>' + object.get('description') +
