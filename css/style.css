@@ -13,6 +13,12 @@ body {
     border: 0px;
 }
 
+.btn-logout:hover {
+    color: #FFF;
+    background-color: #003366;
+    border: 1px solid #003366;
+}
+
 .btn-create {
   color: #FFF;
   background-color: #003366;
@@ -56,9 +62,9 @@ body {
     border: 0px;
 }
 .btn-submit:hover {
-    color: #003366;
+    color: #FFF;
     border: 1px solid #003366;
-    background-color: #FFF;
+    background-color: #003366;
 }
 .res {
     float: left;
